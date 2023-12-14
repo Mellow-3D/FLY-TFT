@@ -35,28 +35,28 @@
 *.gcno
 
 # Kernel Module
-.cmd
-.ko
-.ko.o
-.order.o
-.symvers
-.modinfo
-.modversions
-.symvers
-.symvers.cmd
-.modinfo.cmd
-.modversions.cmd
-.ko.modinfo
-.ko.modversions
-.ko.symvers
-.ko.symvers.cmd
-.ko.cmd
+*.cmd
+*.ko
+*.ko.o
+*.order.o
+*.symvers
+*.modinfo
+*.modversions
+*.symvers
+*.symvers.cmd
+*.modinfo.cmd
+*.modversions.cmd
+*.ko.modinfo
+*.ko.modversions
+*.ko.symvers
+*.ko.symvers.cmd
+*.ko.cmd
 
 # Device Tree Overlays
 *.dtbo
 
 # Kernel Object
-.ko.cmd
+*.ko.cmd
 
 # Kernel Debug
 .debug/
