@@ -1,0 +1,74 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.sub
+*.gcda
+*.gcno
+
+# Kernel Module
+.cmd
+.ko
+.ko.o
+.order.o
+.symvers
+.modinfo
+.modversions
+.symvers
+.symvers.cmd
+.modinfo.cmd
+.modversions.cmd
+.ko.modinfo
+.ko.modversions
+.ko.symvers
+.ko.symvers.cmd
+.ko.cmd
+
+# Device Tree Overlays
+*.dtbo
+
+# Kernel Object
+.ko.cmd
+
+# Kernel Debug
+.debug/
+
+# Kernel Map
+.map
+
+# Kernel Config
+.config
+
+# Kernel Build
+.build/
+
+# Kernel Image
+.img
