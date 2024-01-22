@@ -4,6 +4,10 @@
  * display controller in SPI mode.
  *
  * Copyright 2023 XiaoK <xiaok@zxkxz.cn>
+ * 
+ * Based on st7735r.c:
+ * Copyright 2017 David Lechner <david@lechnology.com>
+ * Copyright (C) 2019 Glider bvba
  */
 
 #include <linux/backlight.h>
@@ -216,17 +220,9 @@ static const struct drm_simple_display_pipe_funcs st7796_pipe_funcs = {
 	.update = mipi_dbi_pipe_update,
 };
 
-static const struct st7796_cfg jd_t18003_t01_cfg = {
+static const struct st7796_cfg fly_tft_v2_cfg = {
 	.mode = {DRM_SIMPLE_MODE(320, 480, 56, 84)},
-	/* Cannot read from Adafruit 1.8" display via SPI */
 	.write_only = true,
-};
-
-static const struct st7796_cfg rh128128t_cfg = {
-	.mode = {DRM_SIMPLE_MODE(320, 480, 56, 84)},
-	.left_offset = 2,
-	.top_offset = 3,
-	.rgb = true,
 };
 
 DEFINE_DRM_GEM_DMA_FOPS(st7796_fops);
@@ -238,25 +234,19 @@ static const struct drm_driver st7796_driver = {
 	.debugfs_init = mipi_dbi_debugfs_init,
 	.name = "st7796",
 	.desc = "Sitronix ST7796",
-	.date = "20200418",
+	.date = "20231011",
 	.major = 1,
-	.minor = 0,
+	.minor = 1,
 };
 
 static const struct of_device_id st7796_of_match[] = {
-	{.compatible = "jianda,jd-t18003-t01", .data = &jd_t18003_t01_cfg},
-	{.compatible = "okaya,rh128128t", .data = &rh128128t_cfg},
-	{.compatible = "sitronix,st7796", .data = &jd_t18003_t01_cfg},
-	{.compatible = "mellow,fly-tft-v2", .data = &jd_t18003_t01_cfg},
+	{.compatible = "mellow,fly-tft-v2", .data = &fly_tft_v2_cfg},
 	{},
 };
 MODULE_DEVICE_TABLE(of, st7796_of_match);
 
 static const struct spi_device_id st7796_id[] = {
-	{"jd-t18003-t01", (uintptr_t)&jd_t18003_t01_cfg},
-	{"rh128128t", (uintptr_t)&rh128128t_cfg},
-	{"st7796", (uintptr_t)&jd_t18003_t01_cfg},
-	{"fly-tft-v2", (uintptr_t)&jd_t18003_t01_cfg},
+	{"fly-tft-v2", (uintptr_t)&fly_tft_v2_cfg},
 	{},
 };
 MODULE_DEVICE_TABLE(spi, st7796_id);
@@ -358,6 +348,6 @@ static struct spi_driver st7796_spi_driver = {
 module_spi_driver(st7796_spi_driver);
 
 MODULE_DESCRIPTION("Sitronix ST7796 DRM driver");
-MODULE_AUTHOR("Xiaokui Zhao <xiaok@zxkxz.cn>");
+MODULE_AUTHOR("XiaoK <xiaok@zxkxz.cn>");
 MODULE_INFO(intree, "Y");
 MODULE_LICENSE("GPL");

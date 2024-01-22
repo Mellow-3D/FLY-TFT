@@ -1,0 +1,96 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/root/fly-tft/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+KDIR	tiny/Makefile	/^KDIR ?= \/lib\/modules\/`uname -r`\/build$/;"	m
+ST7796_BPCCTR	tiny/st7796.c	/^#define ST7796_BPCCTR /;"	d	file:
+ST7796_CASET	tiny/st7796.c	/^#define ST7796_CASET /;"	d	file:
+ST7796_CSCONCTL	tiny/st7796.c	/^#define ST7796_CSCONCTL /;"	d	file:
+ST7796_DFUNCTR	tiny/st7796.c	/^#define ST7796_DFUNCTR /;"	d	file:
+ST7796_DISPOFF	tiny/st7796.c	/^#define ST7796_DISPOFF /;"	d	file:
+ST7796_DISPON	tiny/st7796.c	/^#define ST7796_DISPON /;"	d	file:
+ST7796_DOCACTL	tiny/st7796.c	/^#define ST7796_DOCACTL /;"	d	file:
+ST7796_EMSET	tiny/st7796.c	/^#define ST7796_EMSET /;"	d	file:
+ST7796_FRMCTR1	tiny/st7796.c	/^#define ST7796_FRMCTR1 /;"	d	file:
+ST7796_FRMCTR2	tiny/st7796.c	/^#define ST7796_FRMCTR2 /;"	d	file:
+ST7796_FRMCTR3	tiny/st7796.c	/^#define ST7796_FRMCTR3 /;"	d	file:
+ST7796_GMCTRN1	tiny/st7796.c	/^#define ST7796_GMCTRN1 /;"	d	file:
+ST7796_GMCTRP1	tiny/st7796.c	/^#define ST7796_GMCTRP1 /;"	d	file:
+ST7796_IFMODE	tiny/st7796.c	/^#define ST7796_IFMODE /;"	d	file:
+ST7796_INVCTR	tiny/st7796.c	/^#define ST7796_INVCTR /;"	d	file:
+ST7796_INVOFF	tiny/st7796.c	/^#define ST7796_INVOFF /;"	d	file:
+ST7796_INVON	tiny/st7796.c	/^#define ST7796_INVON /;"	d	file:
+ST7796_MADCTL	tiny/st7796.c	/^#define ST7796_MADCTL /;"	d	file:
+ST7796_MADCTL_BGR	tiny/st7796.c	/^#define ST7796_MADCTL_BGR /;"	d	file:
+ST7796_MADCTL_MH	tiny/st7796.c	/^#define ST7796_MADCTL_MH /;"	d	file:
+ST7796_MADCTL_ML	tiny/st7796.c	/^#define ST7796_MADCTL_ML /;"	d	file:
+ST7796_MADCTL_MV	tiny/st7796.c	/^#define ST7796_MADCTL_MV /;"	d	file:
+ST7796_MADCTL_MX	tiny/st7796.c	/^#define ST7796_MADCTL_MX /;"	d	file:
+ST7796_MADCTL_MY	tiny/st7796.c	/^#define ST7796_MADCTL_MY /;"	d	file:
+ST7796_NOP	tiny/st7796.c	/^#define ST7796_NOP /;"	d	file:
+ST7796_NORON	tiny/st7796.c	/^#define ST7796_NORON /;"	d	file:
+ST7796_PASET	tiny/st7796.c	/^#define ST7796_PASET /;"	d	file:
+ST7796_PIXFMT	tiny/st7796.c	/^#define ST7796_PIXFMT /;"	d	file:
+ST7796_PTLAR	tiny/st7796.c	/^#define ST7796_PTLAR /;"	d	file:
+ST7796_PTLON	tiny/st7796.c	/^#define ST7796_PTLON /;"	d	file:
+ST7796_PWCTR1	tiny/st7796.c	/^#define ST7796_PWCTR1 /;"	d	file:
+ST7796_PWCTR2	tiny/st7796.c	/^#define ST7796_PWCTR2 /;"	d	file:
+ST7796_PWCTR3	tiny/st7796.c	/^#define ST7796_PWCTR3 /;"	d	file:
+ST7796_RAMRD	tiny/st7796.c	/^#define ST7796_RAMRD /;"	d	file:
+ST7796_RAMWR	tiny/st7796.c	/^#define ST7796_RAMWR /;"	d	file:
+ST7796_RDDID	tiny/st7796.c	/^#define ST7796_RDDID /;"	d	file:
+ST7796_RDDISBV	tiny/st7796.c	/^#define ST7796_RDDISBV /;"	d	file:
+ST7796_RDDST	tiny/st7796.c	/^#define ST7796_RDDST /;"	d	file:
+ST7796_RDID4	tiny/st7796.c	/^#define ST7796_RDID4 /;"	d	file:
+ST7796_RDIMGFMT	tiny/st7796.c	/^#define ST7796_RDIMGFMT /;"	d	file:
+ST7796_RDMADCTL	tiny/st7796.c	/^#define ST7796_RDMADCTL /;"	d	file:
+ST7796_RDMODE	tiny/st7796.c	/^#define ST7796_RDMODE /;"	d	file:
+ST7796_RDPIXFMT	tiny/st7796.c	/^#define ST7796_RDPIXFMT /;"	d	file:
+ST7796_RDSELFDIAG	tiny/st7796.c	/^#define ST7796_RDSELFDIAG /;"	d	file:
+ST7796_SLPIN	tiny/st7796.c	/^#define ST7796_SLPIN /;"	d	file:
+ST7796_SLPOUT	tiny/st7796.c	/^#define ST7796_SLPOUT /;"	d	file:
+ST7796_SWRESET	tiny/st7796.c	/^#define ST7796_SWRESET /;"	d	file:
+ST7796_VMCOFF	tiny/st7796.c	/^#define ST7796_VMCOFF /;"	d	file:
+ST7796_VMCTR1	tiny/st7796.c	/^#define ST7796_VMCTR1 /;"	d	file:
+ST7796_VSCRDEF	tiny/st7796.c	/^#define ST7796_VSCRDEF /;"	d	file:
+ST7796_VSCRSADD	tiny/st7796.c	/^#define ST7796_VSCRSADD /;"	d	file:
+ST7796_WRCTRLD	tiny/st7796.c	/^#define ST7796_WRCTRLD /;"	d	file:
+ST7796_WRDISBV	tiny/st7796.c	/^#define ST7796_WRDISBV /;"	d	file:
+all	tiny/Makefile	/^all:$/;"	t
+backlight	rpi-overlays/fly-tft-v2-r.dts	/^			backlight: backlight {$/;"	l
+backlight	rpi-overlays/fly-tft-v2.dts	/^			backlight: backlight {$/;"	l
+cfg	tiny/st7796.c	/^	const struct st7796_cfg *cfg;$/;"	m	struct:st7796_priv	typeref:typename:const struct st7796_cfg *	file:
+clean	tiny/Makefile	/^clean:$/;"	t
+dbidev	tiny/st7796.c	/^	struct mipi_dbi_dev dbidev; \/* Must be first for .release() *\/$/;"	m	struct:st7796_priv	typeref:struct:mipi_dbi_dev	file:
+install	tiny/Makefile	/^install:$/;"	t
+jd_t18003_t01_cfg	tiny/st7796.c	/^static const struct st7796_cfg jd_t18003_t01_cfg = {$/;"	v	typeref:typename:const struct st7796_cfg	file:
+left_offset	tiny/st7796.c	/^	unsigned int left_offset;$/;"	m	struct:st7796_cfg	typeref:typename:unsigned int	file:
+mode	tiny/st7796.c	/^	const struct drm_display_mode mode;$/;"	m	struct:st7796_cfg	typeref:typename:const struct drm_display_mode	file:
+pitft	rpi-overlays/fly-tft-v2-r.dts	/^                        pitft: pitft@0{$/;"	l
+pitft	rpi-overlays/fly-tft-v2.dts	/^                        pitft: pitft@0{$/;"	l
+pitft_pins	rpi-overlays/fly-tft-v2-r.dts	/^                        pitft_pins: pitft_pins {$/;"	l
+pitft_pins	rpi-overlays/fly-tft-v2.dts	/^                        pitft_pins: pitft_pins {$/;"	l
+rgb	tiny/st7796.c	/^	unsigned int rgb : 1; \/* RGB (vs. BGR) *\/$/;"	m	struct:st7796_cfg	typeref:typename:unsigned int:1	file:
+rh128128t_cfg	tiny/st7796.c	/^static const struct st7796_cfg rh128128t_cfg = {$/;"	v	typeref:typename:const struct st7796_cfg	file:
+st7796_cfg	tiny/st7796.c	/^struct st7796_cfg$/;"	s	file:
+st7796_driver	tiny/st7796.c	/^static const struct drm_driver st7796_driver = {$/;"	v	typeref:typename:const struct drm_driver	file:
+st7796_id	tiny/st7796.c	/^static const struct spi_device_id st7796_id[] = {$/;"	v	typeref:typename:const struct spi_device_id[]	file:
+st7796_of_match	tiny/st7796.c	/^static const struct of_device_id st7796_of_match[] = {$/;"	v	typeref:typename:const struct of_device_id[]	file:
+st7796_pipe_enable	tiny/st7796.c	/^static void st7796_pipe_enable(struct drm_simple_display_pipe *pipe,$/;"	f	typeref:typename:void	file:
+st7796_pipe_funcs	tiny/st7796.c	/^static const struct drm_simple_display_pipe_funcs st7796_pipe_funcs = {$/;"	v	typeref:typename:const struct drm_simple_display_pipe_funcs	file:
+st7796_priv	tiny/st7796.c	/^struct st7796_priv$/;"	s	file:
+st7796_probe	tiny/st7796.c	/^static int st7796_probe(struct spi_device *spi)$/;"	f	typeref:typename:int	file:
+st7796_remove	tiny/st7796.c	/^static void st7796_remove(struct spi_device *spi)$/;"	f	typeref:typename:void	file:
+st7796_shutdown	tiny/st7796.c	/^static void st7796_shutdown(struct spi_device *spi)$/;"	f	typeref:typename:void	file:
+st7796_spi_driver	tiny/st7796.c	/^static struct spi_driver st7796_spi_driver = {$/;"	v	typeref:struct:spi_driver	file:
+top_offset	tiny/st7796.c	/^	unsigned int top_offset;$/;"	m	struct:st7796_cfg	typeref:typename:unsigned int	file:
+touch	rpi-overlays/fly-tft-v2.dts	/^                        touch: touch@5d {$/;"	l
+write_only	tiny/st7796.c	/^	unsigned int write_only : 1;$/;"	m	struct:st7796_cfg	typeref:typename:unsigned int:1	file:
+xpt2046	rpi-overlays/fly-tft-v2-r.dts	/^                        xpt2046: xpt2046@1 {$/;"	l

@@ -2,8 +2,8 @@ KDIR ?= /lib/modules/`uname -r`/build
 
 obj-m += st7796.o
 
-all:
-	$(MAKE) -C $(KDIR) M=$$PWD modules
+default:
+	$(MAKE) -C $(KDIR) M=$$PWD
 install:
 	$(MAKE) -C $(KDIR) M=$$PWD modules_install
 clean:
