@@ -80,34 +80,34 @@
                         #size-cells = <0>;
 
                         // touch: touch@14 {
-                        //         compatible = "goodix,gt911";
-                        //         reg = <0x14>;
-                        //         interrupt-parent = <&gpio>;
-                        //         interrupts = <24 2>; /* high-to-low edge triggered */
-                        //         pendown-gpio = <&gpio 24 0>;
-                        //         irq-gpios = <&gpio 24 0>;
-                        //         reset-gpios = <&gpio 6 2>;
-                        //         touchscreen-size-x = <320>;
-                        //         touchscreen-size-y = <480>;
-                        //         touchscreen-inverted-x;
-                        //         touchscreen-swapped-x-y;
-                        //         status = "okay";
+                                //         compatible = "goodix,gt911";
+                                //         reg = <0x14>;
+                                //         interrupt-parent = <&gpio>;
+                                //         interrupts = <24 2>; /* high-to-low edge triggered */
+                                //         pendown-gpio = <&gpio 24 0>;
+                                //         irq-gpios = <&gpio 24 0>;
+                                //         reset-gpios = <&gpio 6 2>;
+                                //         touchscreen-size-x = <320>;
+                                //         touchscreen-size-y = <480>;
+                                //         touchscreen-inverted-x;
+                                //         touchscreen-swapped-x-y;
+                                //         status = "okay";
                         // };
 
                         touch: touch@5d {
-                                        compatible = "goodix,gt911";
-                                        reg = <0x5d>;
-                                        interrupt-parent = <&gpio>;
-                                        interrupts = <24 2>; /* high-to-low edge triggered */
-                                        pendown-gpio = <&gpio 24 0>;
+                                compatible = "goodix,gt911";
+                                reg = <0x5d>;
+                                interrupt-parent = <&gpio>;
+                                interrupts = <24 2>; /* high-to-low edge triggered */
+                                pendown-gpio = <&gpio 24 0>;
 
-                                        irq-gpios = <&gpio 24 0>;
-                                        reset-gpios = <&gpio 6 2>;
-                                        touchscreen-size-x = <320>;
-                                        touchscreen-size-y = <480>;
-                                        touchscreen-inverted-x;
-                                        touchscreen-swapped-x-y;
-                                        status = "okay";
+                                irq-gpios = <&gpio 24 0>;
+                                reset-gpios = <&gpio 6 2>;
+                                touchscreen-size-x = <320>;
+                                touchscreen-size-y = <480>;
+                                touchscreen-inverted-x;
+                                touchscreen-swapped-x-y;
+                                status = "okay";
                         };
                 };
         };
