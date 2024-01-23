@@ -1,53 +1,54 @@
 # FLY-TFT
 
-## 这是FLY-TFT-V2的RPI驱动仓库
+[中文](./README-ZH.md)
 
+## This is the RPI driver repository for FLY-TFT-V2
 
-### 1. 介绍
+### 1. Introduction
 
-FLY-TFT-V2是一款基于st7796的TFT液晶屏，支持电容触摸与电阻触摸两种，分辨率320x480，使用SPI接口
+FLY-TFT-V2 is a TFT LCD screen based on the ST7796 controller, supporting both capacitive and resistive touch input. It has a resolution of 320x480 pixels and communicates via the SPI interface.
 
-### 2. 系统安装
+### 2. System Installation
 
-> 注意：树莓派使用的系统内核版本必须大于`5.17.x`, 执行命令`uname -r`查看内核版本
+> Note: The kernel version used by your Raspberry Pi must be greater than `5.17.x`. Run the command `uname -r` to check your current kernel version.
 
-* 使用 [Raspberry Imager](https://www.raspberrypi.com/software/) 安装最新的 **MainsailOS**
-    1. 下载并安装 [Raspberry Imager](https://www.raspberrypi.com/software/) 
-    2. 打开**Raspberry Imager**
-    3. 点击**CHOOSE DEVICE**
-    4. 根据你的设备选择对应型号
-    5. 点击**CHOOSE OS**
-    6. 选择**Other specific-purpose OS**
-    7. 选择**3D printing**
-    8. 选择**Mainsail OS**
-    9. 选择最新的版本。如果你的设置支持64位系统则选择**rpi64**
-    10. 点击**CHOOSE STORAGE**
-    11. 选择你的存储设备，比如SD卡
-    12. 点击**NEXT**，等待安装完成
+* Install the latest **MainsailOS** using [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+    1. Download and install [Raspberry Pi Imager](https://www.raspberrypi.com/software/) 
+    2. Open **Raspberry Pi Imager**
+    3. Click **CHOOSE OS**
+    4. Select the appropriate model for your device
+    5. Click **CHOOSE OS** again
+    6. Select **Other specific-purpose OS**
+    7. Choose **3D printing**
+    8. Select **Mainsail OS**
+    9. Choose the latest version available. If your setup supports 64-bit systems, select **rpi64**
+    10. Click **CHOOSE STORAGE**
+    11. Select your storage device, such as an SD card
+    12. Click **WRITE**, and wait for the installation to complete.
 
-### 4. 驱动安装
+### 4. Driver Installation
 
-1. 安装FLY-TFT-V2驱动
+1. Install the FLY-TFT-V2 driver:
     ```bash
     git clone https://github.com/kluoyun/FLY-TFT.git
     cd FLY-TFT-V2
-    shou ./scripts/install.sh
+    sh ./scripts/install.sh
     ```
 
-### 5. 使用
+### 5. Usage
 
-* 请确保硬件连接正确
-* 安装了驱动
-* 在`/boot/config.txt`文件中添加了`dtoverlay=fly-tft-v2`或`dtoverlay=fly-tft-v2-r`的覆盖层支持
-* 如果已完成上述所有步骤，请执行`sudo reboot`重启系统
-* 部分系统可能存在默认的fb0设备，FLY-TFT会被分配到fb1设备，需要修改配置文件使能fb1设备
-* 执行命令`ls /dev/fb*`查看设备，如果出现两个设备fb0和fb1，请执行下面的命令将fb1设备使能（默认是fb0）
-* 执行下面的命令修改默认配置为fb1设备
+* Ensure the hardware connections are correct.
+* Install the driver as instructed above.
+* Add the overlay support `dtoverlay=fly-tft-v2` or `dtoverlay=fly-tft-v2-r` in the `/boot/config.txt` file.
+* If all the steps above have been completed, execute `sudo reboot` to restart the system.
+* In some systems, there might be a default fb0 device; FLY-TFT may be assigned to fb1. You need to enable the fb1 device if it appears.
+* Run the command `ls /dev/fb*` to view the devices. If you see both fb0 and fb1, execute the following commands to enable the fb1 device (default is fb0).
+* Execute the following command to modify the configuration to use fb1 instead of fb0:
     ```bash
     sudo sed -i 's/\/dev\/fb0/\/dev\/fb1/g' /etc/X11/xorg.conf.d/99-fbdev.conf
     ```
-* 重启KlipperScreen即可
+* Restart KlipperScreen after making these changes.
 
-### 5. 反馈
+### 5. Feedback
 
-> 我们在最新的MainsailOS系统上测试通过，如果有问题欢迎通过Github Issues反馈。
+> We've tested this on the latest MainsailOS system. If you encounter any issues, please feel free to provide feedback through Github Issues.
