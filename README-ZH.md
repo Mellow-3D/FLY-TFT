@@ -32,11 +32,12 @@ FLY-TFT-V2是一款基于st7796的TFT液晶屏，支持电容触摸与电阻触�
 1. 安装FLY-TFT-V2驱动
     ```bash
     git clone https://github.com/kluoyun/FLY-TFT.git
-    cd FLY-TFT-V2
-    shou ./scripts/install.sh
+    cd FLY-TFT
+    sudo chmod +x ./scripts/install.sh
+    ./scripts/install.sh
     ```
 
-### 5. 使用
+### 5. 使用TFT
 
 * 请确保硬件连接正确
 * 安装了驱动
@@ -48,8 +49,13 @@ FLY-TFT-V2是一款基于st7796的TFT液晶屏，支持电容触摸与电阻触�
     ```bash
     sudo sed -i 's/\/dev\/fb0/\/dev\/fb1/g' /etc/X11/xorg.conf.d/99-fbdev.conf
     ```
-* 重启KlipperScreen即可
 
-### 5. 反馈
+### 6. 使用KlipperScreen
+
+* MainsailOS默认没有安装KlipperScreen，需要手动安装
+* 请参考[KlipperScreen](https://github.com/KlipperScreen/KlipperScreen)或使用[kiauh](https://github.com/dw-0/kiauh)安装
+* 如果成功安装了KlipperScreen，且第5步骤已正确完成，此时应该已经显示了KlipperScreen界面
+
+### 7. 反馈
 
 > 我们在最新的MainsailOS系统上测试通过，如果有问题欢迎通过Github Issues反馈。

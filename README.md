@@ -31,11 +31,12 @@ FLY-TFT-V2 is a TFT LCD screen based on the ST7796 controller, supporting both c
 1. Install the FLY-TFT-V2 driver:
     ```bash
     git clone https://github.com/kluoyun/FLY-TFT.git
-    cd FLY-TFT-V2
-    sh ./scripts/install.sh
+    cd FLY-TFT
+    sudo chmod +x ./scripts/install.sh
+    ./scripts/install.sh
     ```
 
-### 5. Usage
+### 5. Usage TFT
 
 * Ensure the hardware connections are correct.
 * Install the driver as instructed above.
@@ -47,8 +48,13 @@ FLY-TFT-V2 is a TFT LCD screen based on the ST7796 controller, supporting both c
     ```bash
     sudo sed -i 's/\/dev\/fb0/\/dev\/fb1/g' /etc/X11/xorg.conf.d/99-fbdev.conf
     ```
-* Restart KlipperScreen after making these changes.
 
-### 5. Feedback
+### 6. Usage KlipperScreen
+
+* KlipperScreen is not installed by default on MainsailOS and needs to be installed manually.
+* Please refer to [KlipperScreen](https://github.com/KlipperScreen/KlipperScreen) or use [kiauh](https://github.com/dw-0/kiauh) to install
+* If KlipperScreen is installed successfully and step 5 has been completed correctly, the KlipperScreen interface should be displayed at this time
+
+### 7. Feedback
 
 > We've tested this on the latest MainsailOS system. If you encounter any issues, please feel free to provide feedback through Github Issues.
