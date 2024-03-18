@@ -4,6 +4,8 @@
 
 ## This is the RPI driver repository for FLY-TFT-V2
 
+> We have received feedback from users that if capacitive touch is not available, please follow [FAQ](./FAQ.md) to troubleshoot the problem.
+
 ### 1. Introduction
 
 FLY-TFT-V2 is a TFT LCD screen based on the ST7796 controller, supporting both capacitive and resistive touch input. It has a resolution of 320x480 pixels and communicates via the SPI interface.
@@ -26,7 +28,7 @@ FLY-TFT-V2 is a TFT LCD screen based on the ST7796 controller, supporting both c
     11. Select your storage device, such as an SD card
     12. Click **WRITE**, and wait for the installation to complete.
 
-### 4. Driver Installation
+### 3. Driver Installation
 
 1. Install the FLY-TFT-V2 driver:
     ```bash
@@ -36,7 +38,7 @@ FLY-TFT-V2 is a TFT LCD screen based on the ST7796 controller, supporting both c
     ./scripts/install.sh
     ```
 
-### 5. Usage TFT
+### 4. Usage TFT
 
 * Ensure the hardware connections are correct.
 * Install the driver as instructed above.
@@ -49,12 +51,12 @@ FLY-TFT-V2 is a TFT LCD screen based on the ST7796 controller, supporting both c
     sudo sed -i 's/\/dev\/fb0/\/dev\/fb1/g' /etc/X11/xorg.conf.d/99-fbdev.conf
     ```
 
-### 6. Usage KlipperScreen
+### 5. Usage KlipperScreen
 
 * KlipperScreen is not installed by default on MainsailOS and needs to be installed manually.
 * Please refer to [KlipperScreen](https://github.com/KlipperScreen/KlipperScreen) or use [kiauh](https://github.com/dw-0/kiauh) to install
 * If KlipperScreen is installed successfully and step 5 has been completed correctly, the KlipperScreen interface should be displayed at this time
 
-### 7. Feedback
+### 6. Feedback
 
 > We've tested this on the latest MainsailOS system. If you encounter any issues, please feel free to provide feedback through Github Issues.

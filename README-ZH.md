@@ -4,6 +4,8 @@
 
 ## 这是FLY-TFT-V2的RPI驱动仓库
 
+> 收到用户反馈，遇到电容触摸不可用的情况，请按照 [FAQ](./FAQ-ZH.md) 排查问题
+
 
 ### 1. 介绍
 
@@ -27,7 +29,7 @@ FLY-TFT-V2是一款基于st7796的TFT液晶屏，支持电容触摸与电阻触�
     11. 选择你的存储设备，比如SD卡
     12. 点击**NEXT**，等待安装完成
 
-### 4. 驱动安装
+### 3. 驱动安装
 
 1. 安装FLY-TFT-V2驱动
     ```bash
@@ -37,7 +39,7 @@ FLY-TFT-V2是一款基于st7796的TFT液晶屏，支持电容触摸与电阻触�
     ./scripts/install.sh
     ```
 
-### 5. 使用TFT
+### 4. 使用TFT
 
 * 请确保硬件连接正确
 * 安装了驱动
@@ -50,12 +52,12 @@ FLY-TFT-V2是一款基于st7796的TFT液晶屏，支持电容触摸与电阻触�
     sudo sed -i 's/\/dev\/fb0/\/dev\/fb1/g' /etc/X11/xorg.conf.d/99-fbdev.conf
     ```
 
-### 6. 使用KlipperScreen
+### 5. 使用KlipperScreen
 
 * MainsailOS默认没有安装KlipperScreen，需要手动安装
 * 请参考[KlipperScreen](https://github.com/KlipperScreen/KlipperScreen)或使用[kiauh](https://github.com/dw-0/kiauh)安装
 * 如果成功安装了KlipperScreen，且第5步骤已正确完成，此时应该已经显示了KlipperScreen界面
 
-### 7. 反馈
+### 6. 反馈
 
 > 我们在最新的MainsailOS系统上测试通过，如果有问题欢迎通过Github Issues反馈。
