@@ -42,7 +42,7 @@ FLY-TFT-V2 is a TFT LCD screen based on the ST7796 controller, supporting both c
 
 * Ensure the hardware connections are correct.
 * Install the driver as instructed above.
-* Add the overlay support `dtoverlay=fly-tft-v2` or `dtoverlay=fly-tft-v2-r` in the `/boot/config.txt` file.
+* Add the overlay support `dtoverlay=fly-tft-v2` or `dtoverlay=fly-tft-v2-r` in the `/boot/config.txt` (`/boot/firmware/config.txt` for bookworm system) file.
 * If all the steps above have been completed, execute `sudo reboot` to restart the system.
 * In some systems, there might be a default fb0 device; FLY-TFT may be assigned to fb1. You need to enable the fb1 device if it appears.
 * Run the command `ls /dev/fb*` to view the devices. If you see both fb0 and fb1, execute the following commands to enable the fb1 device (default is fb0).
