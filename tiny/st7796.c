@@ -4,7 +4,7 @@
  * display controller in SPI mode.
  *
  * Copyright 2023 XiaoK <xiaok@zxkxz.cn>
- * 
+ *
  * Based on st7735r.c:
  * Copyright 2017 David Lechner <david@lechnology.com>
  * Copyright (C) 2019 Glider bvba
@@ -17,11 +17,16 @@
 #include <linux/module.h>
 #include <linux/property.h>
 #include <linux/spi/spi.h>
+#include <linux/version.h>
 #include <video/mipi_display.h>
 
 #include <drm/drm_atomic_helper.h>
 #include <drm/drm_drv.h>
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 1, 0)
 #include <drm/drm_fb_helper.h>
+#else
+#include <drm/drm_fbdev_generic.h>
+#endif
 #include <drm/drm_gem_atomic_helper.h>
 #include <drm/drm_gem_dma_helper.h>
 #include <drm/drm_managed.h>
@@ -214,10 +219,14 @@ out_exit:
 }
 
 static const struct drm_simple_display_pipe_funcs st7796_pipe_funcs = {
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 1, 0)
 	.mode_valid = mipi_dbi_pipe_mode_valid,
 	.enable = st7796_pipe_enable,
 	.disable = mipi_dbi_pipe_disable,
 	.update = mipi_dbi_pipe_update,
+#else
+	DRM_MIPI_DBI_SIMPLE_DISPLAY_PIPE_FUNCS(st7796_pipe_enable),
+#endif
 };
 
 static const struct st7796_cfg fly_tft_v2_cfg = {
@@ -262,8 +271,6 @@ static int st7796_probe(struct spi_device *spi)
 	struct gpio_desc *dc;
 	u32 rotation = 0;
 	int ret;
-
-	dev_info(dev, "Probe FLY-TFT");
 
 	cfg = device_get_match_data(&spi->dev);
 	if (!cfg)
