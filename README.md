@@ -4,7 +4,7 @@
 
 ## This is the RPI driver repository for FLY-TFT-V2
 
-> We have received feedback from users that if capacitive touch is not available, please follow [FAQ](./FAQ.md) to troubleshoot the problem.
+> ~~ We have received feedback from users that if capacitive touch is not available, please follow [FAQ](./FAQ.md) to troubleshoot the problem. ~~
 
 ### 1. Introduction
 
@@ -62,9 +62,9 @@ FLY-TFT-V2 is a TFT LCD screen based on the ST7796 controller, supporting both c
     ```
     * The default screen is 90-degree horizontal screen display. If you need to rotate the screen, please use the following configuration
     ```bash
-     dtoverlay=fly-tft-v2,r90 # Same as the default direction, horizontal
+     dtoverlay=fly-tft-v2,r90  # Same as the default direction, horizontal
      dtoverlay=fly-tft-v2,r270 # 270-degree horizontal screen, horizontal (flip)
-     dtoverlay=fly-tft-v2,r0 # 0 degree vertical screen, portrait orientation
+     dtoverlay=fly-tft-v2,r0   # 0 degree vertical screen, portrait orientation
      dtoverlay=fly-tft-v2,r180 # 180-degree vertical screen, portrait (flip)
      ```
      * Only one configuration can be added, multiple configurations cannot be added
