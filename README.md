@@ -4,11 +4,15 @@
 
 ## This is the RPI driver repository for FLY-TFT-V2
 
-> ~~ We have received feedback from users that if capacitive touch is not available, please follow [FAQ](./FAQ.md) to troubleshoot the problem. ~~
+> ~~We have received feedback from users that if capacitive touch is not available, please follow [FAQ](./FAQ.md) to troubleshoot the problem.~~
 
 ### 1. Introduction
 
 FLY-TFT-V2 is a TFT LCD screen based on the ST7796 controller, supporting both capacitive and resistive touch input. It has a resolution of 320x480 pixels and communicates via the SPI interface.
+
+Supported devices: `Raspberry Pi zreo 2`, `Raspberry Pi zreo 2W`, `Raspberry Pi 3B`, `Raspberry Pi 3B+`, `Raspberry Pi 4B`, `Raspberry Pi 5`, `Raspberry Pi CM4IO`
+
+* Raspberry Pi zreo 2 tested fine, Raspberry Pi zreo not tested
 
 <table>
 <tr>

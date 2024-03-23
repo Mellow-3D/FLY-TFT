@@ -11,6 +11,10 @@
 
 FLY-TFT-V2是一款基于st7796的TFT液晶屏，支持电容触摸与电阻触摸两种，分辨率320x480，使用SPI接口
 
+支持设备：`Raspberry Pi zreo 2`、`Raspberry Pi zreo 2W`, `Raspberry Pi 3B`、`Raspberry Pi 3B+`、`Raspberry Pi 4B`、`Raspberry Pi 5`、`Raspberry Pi CM4IO`
+
+* Raspberry Pi zreo 2测试正常，Raspberry Pi zreo未测试
+
 <table>
 <tr>
 <td><img src="./images/ks.jpg" title="KlipperScreen" width="200" border=10></td>
