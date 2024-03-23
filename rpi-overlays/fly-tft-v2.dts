@@ -10,7 +10,8 @@
 	compatible = "brcm,bcm2835",
 	"brcm,bcm2708",
 	"brcm,bcm2709",
-	"brcm,bcm2711";
+	"brcm,bcm2711",
+	"brcm,bcm2712";
 	
 	fragment@0 {
 		target = <&spi0>;
@@ -69,6 +70,25 @@
 				backlight = <&backlight>;
 				status = "okay";
 			};
+			
+			touch_res: touch@1 {
+				compatible = "ti,ads7846";
+				reg = <1>;
+				
+				spi-max-frequency = <2000000>;
+				interrupt-parent = <&gpio>;
+				interrupts = <24 2>; /* high-to-low edge triggered */
+				pendown-gpio = <&gpio 24 1>;
+				// ti,keep-vref-on = <1>;
+				ti,x-min = /bits/ 16 <3900>;
+				ti,x-max = /bits/ 16 <200>;
+				ti,y-min = /bits/ 16 <200>;
+				ti,y-max = /bits/ 16 <3900>;
+				ti,x-plate-ohms = /bits/ 16 <60>;
+				ti,pressure-max = /bits/ 16 <255>;
+				touchscreen-swapped-x-y;
+				status = "okay";
+			};
 		};
 	};
 	
@@ -79,24 +99,24 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 			
-			// touch: touch@14 {
-			//         compatible = "goodix,gt911";
-			//         reg = <0x14>;
-			//         interrupt-parent = <&gpio>;
-			//         interrupts = <24 2>; /* high-to-low edge triggered */
-			//         pendown-gpio = <&gpio 24 0>;
-			//         irq-gpios = <&gpio 24 0>;
-			//         reset-gpios = <&gpio 6 2>;
-			//         touchscreen-size-x = <320>;
-			//         touchscreen-size-y = <480>;
-			//         touchscreen-inverted-x;
-			//         touchscreen-swapped-x-y;
-			//         status = "okay";
-			// };
-			
-			touch: touch@14 {
+			touch_14: touch@14 {
 				compatible = "goodix,gt911";
 				reg = <0x14>;
+				// interrupt-parent = <&gpio>;
+				// interrupts = <24 2>; /* high-to-low edge triggered */
+				// pendown-gpio = <&gpio 24 0>;
+				// irq-gpios = <&gpio 24 0>;
+				reset-gpios = <&gpio 6 0>;
+				touchscreen-size-x = <320>;
+				touchscreen-size-y = <480>;
+				touchscreen-inverted-x;
+				touchscreen-swapped-x-y;
+				status = "okay";
+			};
+			
+			touch_5d: touch@5d {
+				compatible = "goodix,gt911";
+				reg = <0x5d>;
 				// interrupt-parent = <&gpio>;
 				// interrupts = <24 2>; /* high-to-low edge triggered */
 				// pendown-gpio = <&gpio 24 0>;
@@ -113,12 +133,55 @@
 	
 	
 	__overrides__ {
-		speed =   <&pitft>,"spi-max-frequency: 0";
-		rotation =  <&pitft>,"rotation: 0";
-		touch-sizex = <&touch>,"touchscreen-size-x?";
-		touch-sizey = <&touch>,"touchscreen-size-y?";
-		touch-invx  = <&touch>,"touchscreen-inverted-x?";
-		touch-invy  = <&touch>,"touchscreen-inverted-y?";
-		touch-swapxy = <&touch>,"touchscreen-swapped-x-y?";
+		r0 = <&pitft>,"rotation:0=0",
+			<&touch_14>,"touchscreen-inverted-x!",
+			<&touch_14>,"touchscreen-swapped-x-y!",
+			<&touch_5d>,"touchscreen-inverted-x!",
+			<&touch_5d>,"touchscreen-swapped-x-y!",
+			<&touch_res>,"touchscreen-inverted-x?",
+			<&touch_res>,"touchscreen-swapped-x-y!";
+		
+		r90 = <&pitft>,"rotation:0=90",
+			<&touch_14>,"touchscreen-inverted-x?",
+			<&touch_14>,"touchscreen-swapped-x-y?",
+			<&touch_5d>,"touchscreen-inverted-x?",
+			<&touch_5d>,"touchscreen-swapped-x-y?",
+			<&touch_res>,"touchscreen-swapped-x-y?";
+		
+		r180 = <&pitft>,"rotation:0=180",
+			<&touch_14>,"touchscreen-swapped-x-y!",
+			<&touch_14>,"touchscreen-inverted-x?",
+			<&touch_14>,"touchscreen-inverted-y?",
+			<&touch_5d>,"touchscreen-swapped-x-y!",
+			<&touch_5d>,"touchscreen-inverted-x?",
+			<&touch_5d>,"touchscreen-inverted-y?",
+			<&touch_res>,"touchscreen-inverted-y?",
+			<&touch_res>,"touchscreen-swapped-x-y!";
+		
+		r270 = <&pitft>,"rotation:0=270",
+			<&touch_14>,"touchscreen-inverted-x!",
+			<&touch_14>,"touchscreen-inverted-y?",
+			<&touch_14>,"touchscreen-swapped-x-y?",
+			<&touch_5d>,"touchscreen-inverted-x!",
+			<&touch_5d>,"touchscreen-inverted-y?",
+			<&touch_5d>,"touchscreen-swapped-x-y?",
+			<&touch_res>,"touchscreen-inverted-x?",
+			<&touch_res>,"touchscreen-inverted-y?",
+			<&touch_res>,"touchscreen-swapped-x-y?";
+		
+		speed = <&pitft>,"spi-max-frequency: 0";
+		rotation = <&pitft>, "rotation:0";
+		disable_touch = <&touch_14>, "status=disabled",
+			<&touch_5d>, "status=disabled",
+			<&touch_res>, "status=disabled";
+		invx = <&touch_14>,"touchscreen-inverted-x?",
+			<&touch_5d>,"touchscreen-inverted-x?",
+			<&touch_res>,"touchscreen-inverted-x?";
+		invy = <&touch_14>,"touchscreen-inverted-y?",
+			<&touch_5d>,"touchscreen-inverted-y?",
+			<&touch_res>,"touchscreen-inverted-y?";
+		swapxy = <&touch_14>,"touchscreen-swapped-x-y?",
+			<&touch_5d>,"touchscreen-swapped-x-y?",
+			<&touch_res>,"touchscreen-swapped-x-y?";
 	};
 };
