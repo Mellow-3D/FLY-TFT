@@ -18,7 +18,7 @@ sudo dtoverlay $CDIR/rpi-overlays/fly-tft-v2.dtbo
 sudo cp $CDIR/rpi-overlays/*.dtbo /boot/overlays/
 
 sudo cp $CDIR/scripts/99-fbdev.conf /etc/X11/xorg.conf.d/99-fbdev.conf
-chmod +x /etc/X11/xorg.conf.d/99-fbdev.conf
+sudo chmod +x /etc/X11/xorg.conf.d/99-fbdev.conf
 
 echo "请在/boot/config.txt中添加以下内容以启用fly-tft-v2"
 echo "Please add the following content in /boot/config.txt to enable fly-tft-v2"
