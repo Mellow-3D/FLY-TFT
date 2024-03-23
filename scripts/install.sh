@@ -3,7 +3,7 @@
 CDIR=$(pwd)
 
 sudo apt update
-sudo apt install git dialog bc device-tree-compiler build-essential libncurses5-dev flex bison openssl libssl-dev dkms raspberrypi-kernel-headers i2c-tools
+sudo apt install -y git dialog bc device-tree-compiler build-essential libncurses5-dev flex bison openssl libssl-dev dkms raspberrypi-kernel-headers i2c-tools
 
 cd $CDIR/tiny
 make 
