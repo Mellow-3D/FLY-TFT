@@ -12,11 +12,11 @@
     pi@mainsailos:~ $ i2cdetect -y -r 1
         0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
     00:                         -- -- -- -- -- -- -- -- 
-    10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+    10: -- -- -- -- UU -- -- -- -- -- -- -- -- -- -- -- 
     20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-    50: -- -- -- -- -- -- -- -- -- -- -- -- -- UU -- -- 
+    50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     70: -- -- -- -- -- -- -- -- 
     ```
@@ -25,16 +25,16 @@
     pi@mainsailos:~ $ i2cdetect -y -r 1
         0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
     00:                         -- -- -- -- -- -- -- -- 
-    10: -- -- -- -- 14 -- -- -- -- -- -- -- -- -- -- -- 
+    10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-    50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+    50: -- -- -- -- -- -- -- -- -- -- -- -- -- 5d -- -- 
     60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     70: -- -- -- -- -- -- -- -- 
     ```
 6. When the above step **5** occurs (driver exception), you can try the following operations:
-     1. Modify the `dtoverlay=fly-tft-v2` added in config.txt to `dtoverlay=fly-tft-v2-0x14`
+     1. Modify the `dtoverlay=fly-tft-v2` added in config.txt to `dtoverlay=fly-tft-v2-0x5d`
      2. Restart the device
 7. If the above step **4** occurs (the driver is normal), you can try the following operations:
     1. Execute `hexdump /dev/input/event0` command
