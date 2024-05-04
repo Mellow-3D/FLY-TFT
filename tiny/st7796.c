@@ -22,7 +22,7 @@
 
 #include <drm/drm_atomic_helper.h>
 #include <drm/drm_drv.h>
-#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 1, 21)
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 2, 1)
 #include <drm/drm_fb_helper.h>
 #else
 #include <drm/drm_fbdev_generic.h>
@@ -219,7 +219,7 @@ out_exit:
 }
 
 static const struct drm_simple_display_pipe_funcs st7796_pipe_funcs = {
-#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 1, 21)
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 2, 1)
 	.mode_valid = mipi_dbi_pipe_mode_valid,
 	.enable = st7796_pipe_enable,
 	.disable = mipi_dbi_pipe_disable,
