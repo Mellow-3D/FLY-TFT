@@ -33,7 +33,7 @@
 			pitft_pins: pitft_pins {
 				brcm,pins = <24 6 26 19 13>; /* TH-INT TH-RST DC RST BLK */
 				brcm,function = <0 1 1 1 1>; /*   in    out  out out out */
-				brcm,pull = <2 2 0 0 2>; /* pullup none */
+				brcm,pull = <2 1 0 0 2>; /* pullup none */
 			};
 		};
 	};
@@ -106,7 +106,7 @@
 				// interrupts = <24 2>; /* high-to-low edge triggered */
 				// pendown-gpio = <&gpio 24 0>;
 				// irq-gpios = <&gpio 24 0>;
-				reset-gpios = <&gpio 6 0>;
+				reset-gpios = <&gpio 6 1>;
 				touchscreen-size-x = <320>;
 				touchscreen-size-y = <480>;
 				touchscreen-inverted-x;
@@ -121,7 +121,7 @@
 				// interrupts = <24 2>; /* high-to-low edge triggered */
 				// pendown-gpio = <&gpio 24 0>;
 				// irq-gpios = <&gpio 24 0>;
-				reset-gpios = <&gpio 6 0>;
+				reset-gpios = <&gpio 6 1>;
 				touchscreen-size-x = <320>;
 				touchscreen-size-y = <480>;
 				touchscreen-inverted-x;
