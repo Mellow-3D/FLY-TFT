@@ -55,6 +55,8 @@ Supported devices: `Raspberry Pi zreo 2`, `Raspberry Pi zreo 2W`, `Raspberry Pi 
 
 ### 4. Enable TFT display
 
+> Touch needs to enable I2C support, and the corresponding configuration is `dtparam=i2c_arm=on`
+
 1. After installing the driver, you need to add the overlay support of `dtoverlay=fly-tft-v2` in the config.txt file.
 2. Open `/boot/config.txt` (`/boot/firmware/config.txt` for bookworm system)
      ```bash

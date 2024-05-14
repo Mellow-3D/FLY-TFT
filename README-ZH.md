@@ -55,6 +55,8 @@ FLY-TFT-V2是一款基于st7796的TFT液晶屏，支持电容触摸与电阻触�
     ```
 ### 4. 启用TFT显示
 
+> 触摸需要启用I2C支持，对应配置为`dtparam=i2c_arm=on`
+
 1. 安装驱动后需要在config.txt文件中添加了 `dtoverlay=fly-tft-v2` 的覆盖层支持
 2. 打开 `/boot/config.txt` (bookworm系统为`/boot/firmware/config.txt`)
     ```bash
