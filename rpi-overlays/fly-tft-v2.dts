@@ -33,7 +33,7 @@
 			pitft_pins: pitft_pins {
 				brcm,pins =     <24 6 26 19 13>; /* TH-INT TH-RST DC RST BLK */
 				brcm,function = <0  1  1  1  1>; /*   in    out  out out out */
-				brcm,pull =     <2  2  0  2  2>; /* 2:up 1:down 0:none */
+				brcm,pull =     <2  1  0  2  2>; /* 2:up 1:down 0:none */
 			};
 		};
 	};
