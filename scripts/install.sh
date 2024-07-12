@@ -43,6 +43,7 @@ install_pack() {
 
 install_drive() {
     cd $CDIR/tiny
+    make clean >/dev/null 2>&1
     make >/dev/null 2>&1
     if [ $? -ne 0 ]; then
         loge "Driver build failed!!!"
@@ -68,7 +69,7 @@ install_drive() {
 
     sudo cp $CDIR/scripts/99-fbdev.conf /etc/X11/xorg.conf.d/99-fbdev.conf >/dev/null 2>&1
     if [ $? -ne 0 ]; then
-        logi "You may not have services like Xorg and KlipperScreen installed yet!!!"
+        loge "You may not have services like Xorg and KlipperScreen installed yet!!!"
     fi
     sudo chmod +x /etc/X11/xorg.conf.d/99-fbdev.conf >/dev/null 2>&1
 }
