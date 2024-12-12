@@ -107,7 +107,7 @@
 				// interrupts = <24 2>; /* high-to-low edge triggered */
 				// pendown-gpio = <&gpio 24 0>;
 				// irq-gpios = <&gpio 24 0>;
-				// reset-gpios = <&gpio 6 0>;
+				reset-gpios = <&gpio 6 0>;
 				touchscreen-size-x = <320>;
 				touchscreen-size-y = <480>;
 				touchscreen-inverted-x;
@@ -122,7 +122,7 @@
 				// interrupts = <24 2>; /* high-to-low edge triggered */
 				// pendown-gpio = <&gpio 24 0>;
 				// irq-gpios = <&gpio 24 0>;
-				// reset-gpios = <&gpio 6 0>;
+				reset-gpios = <&gpio 6 0>;
 				touchscreen-size-x = <320>;
 				touchscreen-size-y = <480>;
 				touchscreen-inverted-x;

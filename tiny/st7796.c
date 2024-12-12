@@ -269,7 +269,7 @@ static int st7796_probe(struct spi_device *spi)
 	struct drm_device *drm;
 	struct mipi_dbi *dbi;
 	struct gpio_desc *dc;
-	struct gpio_desc *th_rst;
+	// struct gpio_desc *th_rst;
 	u32 rotation = 0;
 	int ret;
 
@@ -296,10 +296,10 @@ static int st7796_probe(struct spi_device *spi)
 	if (IS_ERR(dc))
 		return dev_err_probe(dev, PTR_ERR(dc), "Failed to get GPIO 'dc'\n");
 
-	th_rst = devm_gpiod_get(dev, "thrst", GPIOD_OUT_HIGH);
-	if (IS_ERR(th_rst))
-		return dev_err_probe(dev, PTR_ERR(th_rst), "Failed to get GPIO 'th_rst'\n");
-	gpiod_direction_output(th_rst, 1);
+	// th_rst = devm_gpiod_get(dev, "thrst", GPIOD_OUT_HIGH);
+	// if (IS_ERR(th_rst))
+	// 	return dev_err_probe(dev, PTR_ERR(th_rst), "Failed to get GPIO 'th_rst'\n");
+	// gpiod_direction_output(th_rst, 1);
 
 	dbidev->backlight = devm_of_find_backlight(dev);
 	if (IS_ERR(dbidev->backlight))
