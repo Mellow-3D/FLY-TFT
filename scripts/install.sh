@@ -30,11 +30,11 @@ install_pack() {
 
 install_drive() {
     cd $CDIR/tiny
-
+    
     logi "Compiling driver..."
-
+    
     make clean >/dev/null 2>&1
-
+    
     if [ -n "$1" ] && [ -d "$1" ]; then
         make KDIR="$1" >/dev/null 2>&1
     else
@@ -129,12 +129,18 @@ install_12() {
         openssl
         libssl-dev
         dkms
-        raspberrypi-kernel-headers
         i2c-tools
     )
+    if [ ! -d "/lib/modules/$(uname -r)/source/include/drm" ]; then
+        PACKS+=(
+            raspberrypi-kernel-headers
+        )
+    fi
     install_pack "${PACKS[@]}"
-    if [ ! -d "/lib/modules/$(uname -r)/build/include/drm" ]; then
-        loge "raspberrypi-kernel-headers package installation failed!!!"
+    if [ -d "/lib/modules/$(uname -r)/source/include/drm" ]; then
+        sudo cp -rf "/lib/modules/$(uname -r)/source/include/"* "/lib/modules/$(uname -r)/build/include/"
+    else
+        loge "Cannot find kernel headers directory!!!"
         exit 1
     fi
     install_drive "/lib/modules/$(uname -r)/build"
