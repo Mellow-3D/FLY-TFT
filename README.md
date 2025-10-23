@@ -50,7 +50,7 @@ Supported devices: `Raspberry Pi zreo 2`, `Raspberry Pi zreo 2W`, `Raspberry Pi 
     git clone https://github.com/kluoyun/FLY-TFT.git
     cd FLY-TFT
     sudo chmod +x ./scripts/install.sh
-    ./scripts/install.sh
+    sudo ./scripts/install.sh
     ```
 
 ### 4. Enable TFT display

@@ -51,7 +51,7 @@ FLY-TFT-V2是一款基于st7796的TFT液晶屏，支持电容触摸与电阻触�
     git clone https://github.com/kluoyun/FLY-TFT.git
     cd FLY-TFT
     sudo chmod +x ./scripts/install.sh
-    ./scripts/install.sh
+    sudo ./scripts/install.sh
     ```
 ### 4. 启用TFT显示
 
