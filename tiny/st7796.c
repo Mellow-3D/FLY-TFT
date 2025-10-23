@@ -25,7 +25,11 @@
 #if LINUX_VERSION_CODE < KERNEL_VERSION(6, 2, 1)
 #include <drm/drm_fb_helper.h>
 #else
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 3, 0)
 #include <drm/drm_fbdev_generic.h>
+#else
+#include <drm/drm_fbdev_dma.h>
+#endif
 #endif
 #include <drm/drm_gem_atomic_helper.h>
 #include <drm/drm_gem_dma_helper.h>
@@ -330,7 +334,11 @@ static int st7796_probe(struct spi_device *spi)
 
 	spi_set_drvdata(spi, drm);
 
+#if LINUX_VERSION_CODE < KERNEL_VERSION(6, 3, 0)
 	drm_fbdev_generic_setup(drm, 0);
+#else
+	drm_fbdev_dma_setup(drm, 0);
+#endif
 
 	return 0;
 }
